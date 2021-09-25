@@ -8,7 +8,7 @@ def titik():
 # function untuk membuat objek titik
     glPointSize(5) #glpointsize untuk mengatur ukuran titik
     glBegin(GL_POINTS) #membuat onject titik
-    glColor3ub(34, 227, 169) #mengatur warna dari titik menggunakan rgb
+    glColor3ub(148,0.211) #mengatur warna dari titik menggunakan rgb
     glVertex2f(250, 250) #mengatur titik koordinat
     glVertex2f(150, 150)
     glVertex2f(150, 250)
@@ -18,7 +18,7 @@ def titik():
 def garis():
     glPointSize(10)
     glBegin(GL_LINES)
-    glColor3ub(34, 227, 169)
+    glColor3ub(148,0.211)
     glVertex2f(100, 100)
     glVertex2f(300, 300)
     glVertex2f(300, 100)
