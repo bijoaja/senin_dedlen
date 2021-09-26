@@ -6,27 +6,40 @@ x = 1000
 y = 1000
 
 def pointsleft():
-    glPointSize(10)
+    glPointSize(5)
     glBegin(GL_POINTS)
     glColor3ub(34, 227, 169)
-    glVertex2f(8, 18)
-    glVertex2f(9, 17)
-    glVertex2f(10, 16)
-    glVertex2f(11, 15)
-    glVertex2f(12, 14)
-    glVertex2f(13, 13)
+    glVertex2f(10, 18)
+    glVertex2f(9.5, 18.5)
+    glVertex2f(9, 19)
+    glVertex2f(8.5, 19.5)
+    glVertex2f(8, 20)
+    glVertex2f(7.5, 20.5)
     glEnd()
 
 def pointrights():
-    glPointSize(10)
+    glPointSize(5)
     glBegin(GL_POINTS)
     glColor3ub(34, 227, 169)
-    glVertex2f(18, 13)
-    glVertex2f(19, 14)
-    glVertex2f(20, 15)
-    glVertex2f(21, 16)
-    glVertex2f(22, 17)
-    glVertex2f(23, 18)
+    glVertex2f(14, 18)
+    glVertex2f(14.5, 18.5)
+    glVertex2f(15, 19)
+    glVertex2f(15.5, 19.5)
+    glVertex2f(16, 20)
+    glVertex2f(16.5, 20.5)
+    glEnd()
+
+def badan():
+    glBegin(GL_POLYGON)
+    glColor3ub(34, 227, 169)
+    glVertex2f(10, 18)
+    glVertex2f(8, 16)
+    glVertex2f(8, 8)
+    glVertex2f(10,6)
+    glVertex2f(14,6)
+    glVertex2f(16, 8)
+    glVertex2f(16,16)
+    glVertex2f(14,18)
     glEnd()
 
 def iterate():
@@ -43,6 +56,7 @@ def showScreen():
     iterate()
     pointsleft()
     pointrights()
+    badan()
     glutSwapBuffers() # untuk membersihkan layar, double buffering
 
 glutInit()
