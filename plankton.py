@@ -2,22 +2,38 @@ from OpenGL.GL import *
 from OpenGL.GLUT import *
 from OpenGL.GLU import *
 
-x = 200
-y = 200
+x = 1000
+y = 1000
 
-def points():
+def pointsleft():
     glPointSize(10)
     glBegin(GL_POINTS)
     glColor3ub(34, 227, 169)
     glVertex2f(8, 18)
-    glVertex2f(18, 9)
+    glVertex2f(9, 17)
+    glVertex2f(10, 16)
+    glVertex2f(11, 15)
+    glVertex2f(12, 14)
+    glVertex2f(13, 13)
+    glEnd()
+
+def pointrights():
+    glPointSize(10)
+    glBegin(GL_POINTS)
+    glColor3ub(34, 227, 169)
+    glVertex2f(18, 13)
+    glVertex2f(19, 14)
+    glVertex2f(20, 15)
+    glVertex2f(21, 16)
+    glVertex2f(22, 17)
+    glVertex2f(23, 18)
     glEnd()
 
 def iterate():
-    glViewport(200, 200, 200, 200) # untuk mengatur area pandang
+    glViewport(100, 100, 1000, 1000) # untuk mengatur area pandang
     glMatrixMode(GL_PROJECTION)
     glLoadIdentity()
-    glOrtho(0.0, 200, 0.0, 200, 0.0, 1.0) # untuk mengatur berapa blok yang digunakan (skala) nilai x, y, z
+    glOrtho(0.0, 100, 0.0, 100, 0.0, 1.0) # untuk mengatur berapa blok yang digunakan (skala) nilai x, y, z
     glMatrixMode (GL_MODELVIEW)
     glLoadIdentity()
 
@@ -25,7 +41,8 @@ def showScreen():
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT) # to clean the screen
     glLoadIdentity()
     iterate()
-    points()
+    pointsleft()
+    pointrights()
     glutSwapBuffers() # untuk membersihkan layar, double buffering
 
 glutInit()
