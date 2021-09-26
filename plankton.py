@@ -44,12 +44,10 @@ def badan():
     
 # MATA
 def bolamata():
-    glBegin(GL_QUADS)
-    glColor3ub(252, 102, 3)
-    glVertex2f(9, 9)
-    glVertex2f(11, 9) 
-    glVertex2f(11, 11) 
-    glVertex2f(9, 11) 
+    glPointSize(25)
+    glBegin(GL_POINTS)
+    glColor3ub(0,0,0)
+    glVertex2f(9,11)
     glEnd()
 
 def retina():
