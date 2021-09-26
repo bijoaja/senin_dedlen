@@ -2,56 +2,54 @@ from OpenGL.GL import *
 from OpenGL.GLUT import *
 from OpenGL.GLU import *
 
+x = 1000
+y = 1000
 
-x, y = 500, 500
-def titik():
-# function untuk membuat objek titik
-    glPointSize(5) #glpointsize untuk mengatur ukuran titik
-    glBegin(GL_POINTS) #membuat onject titik
-    glColor3ub(34, 227, 169) #mengatur warna dari titik menggunakan rgb
-    glVertex2f(250, 250) #mengatur titik koordinat
-    glVertex2f(150, 150)
-    glVertex2f(150, 250)
-    glVertex2f(250, 150)
-    glEnd() #mengakhiri pembuatan objek
-
-def garis():
+def pointsleft():
     glPointSize(10)
-    glBegin(GL_LINES)
+    glBegin(GL_POINTS)
     glColor3ub(34, 227, 169)
-    glVertex2f(100, 100)
-    glVertex2f(300, 300)
-    glVertex2f(300, 100)
-    glVertex2f(100, 300)
+    glVertex2f(8, 18)
+    glVertex2f(9, 17)
+    glVertex2f(10, 16)
+    glVertex2f(11, 15)
+    glVertex2f(12, 14)
+    glVertex2f(13, 13)
+    glEnd()
+
+def pointrights():
+    glPointSize(10)
+    glBegin(GL_POINTS)
+    glColor3ub(34, 227, 169)
+    glVertex2f(18, 13)
+    glVertex2f(19, 14)
+    glVertex2f(20, 15)
+    glVertex2f(21, 16)
+    glVertex2f(22, 17)
+    glVertex2f(23, 18)
     glEnd()
 
 def iterate():
-    glViewport(0, 0, 200, 200) #utk mengatur area pandang
+    glViewport(100, 100, 1000, 1000) # untuk mengatur area pandang
     glMatrixMode(GL_PROJECTION)
     glLoadIdentity()
-    glOrtho(0.0, 500, 0.0, 500, 0.0, 1.0) #utk mengatur berapa blok yang digunakan (skala) nilai x, y, z
+    glOrtho(0.0, 100, 0.0, 100, 0.0, 1.0) # untuk mengatur berapa blok yang digunakan (skala) nilai x, y, z
     glMatrixMode (GL_MODELVIEW)
     glLoadIdentity()
 
 def showScreen():
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT) #utk membersihkan layar
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT) # to clean the screen
     glLoadIdentity()
     iterate()
-    titik()
-    garis()
-    #garisloop()
-    #kotak()
-    #tak_beraturan()
-    glutSwapBuffers() #utk membersihkan layar, double buffering
+    pointsleft()
+    pointrights()
+    glutSwapBuffers() # untuk membersihkan layar, double buffering
 
-glutInit() #inisialisasi glut
-glutInitDisplayMode(GLUT_RGBA) #utk mengatur display supaya berwarna
-glutInitWindowSize(500, 500) #utk mengatur ukuran window
-glutInitWindowPosition(0, 0) #utk mengatur letak window
-#utk transparansi (tapi belum bisa)
-#glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
-#glEnable(GL_BLEND)
-wind = glutCreateWindow("Point and Lines") #utk memberi nama pada window
-glutDisplayFunc(showScreen) #utk fungsi callback
-glutIdleFunc(showScreen) #utk fungsi callback
-glutMainLoop() #fungsi yang akan memulai keseluruhan program
+glutInit()
+glutInitDisplayMode(GLUT_RGBA) # untuk mengatur display supaya berwarna
+glutInitWindowSize(500, 500) # untuk mengatur ukuran window
+glutInitWindowPosition(0, 0) # untuk mengatur letak window
+wind = glutCreateWindow("Point and Lines") # untuk memberi nama pada window
+glutDisplayFunc(showScreen) # untuk fungsi callback
+glutIdleFunc(showScreen) # untuk fungsi callback
+glutMainLoop() # fungsi yang akan memulai keseluruhan program
