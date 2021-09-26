@@ -41,7 +41,44 @@ def badan():
     glVertex2f(16,16)
     glVertex2f(14,18)
     glEnd()
+    
+# MATA
+def bolamata():
+    glBegin(GL_QUADS)
+    glColor3ub(252, 102, 3)
+    glVertex2f(9, 9)
+    glVertex2f(11, 9) 
+    glVertex2f(11, 11) 
+    glVertex2f(9, 11) 
+    glEnd()
 
+def retina():
+    glBegin(GL_QUADS)
+    glColor3ub(34, 227, 169)
+    glVertex2f(8, 8) 
+    glVertex2f(12, 8) 
+    glVertex2f(12, 12)
+    glVertex2f(8, 12)
+    glEnd()
+
+def RL_kelopak_mata():
+    glBegin(GL_QUADS)
+    glColor3ub(112, 30, 2)
+    glVertex2f(7, 8) 
+    glVertex2f(13, 8) 
+    glVertex2f(13, 12) 
+    glVertex2f(7, 12)
+    glEnd()
+
+def TB_kelopak_mata():
+    glBegin(GL_QUADS)
+    glColor3ub(112, 30, 2)
+    glVertex2f(8, 7) 
+    glVertex2f(12, 7) 
+    glVertex2f(12, 14) 
+    glVertex2f(8, 14) 
+    glEnd()
+    
 def iterate():
     glViewport(100, 100, 1000, 1000) # untuk mengatur area pandang
     glMatrixMode(GL_PROJECTION)
