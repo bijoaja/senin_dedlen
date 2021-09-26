@@ -3,38 +3,52 @@ from OpenGL.GL.glget import GLsize
 from OpenGL.GLUT import *
 from OpenGL.GLU import *
 
-x = 1000
-y = 1000
 
 #antena
 def pointsleft():
     glPointSize(5)
     glBegin(GL_POINTS)
-    glColor3ub(34, 227, 169)
-    glVertex2f(10, 18)
-    glVertex2f(9.5, 18.5)
-    glVertex2f(9, 19)
-    glVertex2f(8.5, 19.5)
-    glVertex2f(8, 20)
-    glVertex2f(7.5, 20.5)
+    glColor3ub(56, 168, 50)
+    glVertex2f(10, 21)
+    glVertex2f(9.5, 21.5)
+    glVertex2f(9, 22)
+    glVertex2f(8.5, 22.5)
+    glVertex2f(8, 23)
+    glVertex2f(7.5, 23.5)
     glEnd()
 
 def pointrights():
     glPointSize(5)
     glBegin(GL_POINTS)
-    glColor3ub(34, 227, 169)
-    glVertex2f(14, 18)
-    glVertex2f(14.5, 18.5)
-    glVertex2f(15, 19)
-    glVertex2f(15.5, 19.5)
-    glVertex2f(16, 20)
-    glVertex2f(16.5, 20.5)
+    glColor3ub(56, 168, 50)
+    glVertex2f(14, 21)
+    glVertex2f(14.5, 21.5)
+    glVertex2f(15, 22)
+    glVertex2f(15.5, 22.5)
+    glVertex2f(16, 23)
+    glVertex2f(16.5, 23.5)
+    glEnd()
+
+def leftline():
+    glColor3ub(56, 168, 50)
+    glPointSize(10)
+    glBegin(GL_LINES)
+    glVertex2f(10, 16) 
+    glVertex2f(10, 21)
+    glEnd()
+    
+def rightline():
+    glColor3ub(56, 168, 50)
+    glPointSize(10)
+    glBegin(GL_LINES) 
+    glVertex2f(14, 16) 
+    glVertex2f(14, 21)
     glEnd()
 
 # BADAN
 def badan():
     glBegin(GL_POLYGON)
-    glColor3ub(34, 227, 169)
+    glColor3ub(56, 168, 50)
     glVertex2f(10, 18.5)
     glVertex2f(8, 16)
     glVertex2f(8, 8)
@@ -63,8 +77,8 @@ def retina():
 def TB_kelopak_mata():
     glBegin(GL_QUADS)
     glColor3ub(0, 0, 0)
-    glVertex2f(10.5, 12.5) 
-    glVertex2f(13.5, 12.5) 
+    glVertex2f(10.5, 12.3) 
+    glVertex2f(13.5, 12.3) 
     glVertex2f(13.5, 17) 
     glVertex2f(10.5, 17) 
     glEnd()
@@ -72,10 +86,10 @@ def TB_kelopak_mata():
 def RL_kelopak_mata():
     glBegin(GL_QUADS)
     glColor3ub(0, 0, 0)
-    glVertex2f(10, 13) 
-    glVertex2f(14, 13) 
-    glVertex2f(14, 16) 
-    glVertex2f(10, 16)
+    glVertex2f(9.8, 13) 
+    glVertex2f(14.2, 13) 
+    glVertex2f(14.2, 16) 
+    glVertex2f(9.8, 16)
     glEnd()
 
 #TANGAN kiri
@@ -127,6 +141,7 @@ def bibir():
     glVertex2f(14.5, 8.5) 
     glVertex2f(9.5, 8.5)
     glEnd()
+
 def bibir2():
     glBegin(GL_QUADS)
     glColor3ub(0, 0, 0)
@@ -198,6 +213,7 @@ def lidah():
     glVertex2f(13.5, 8)
     glVertex2f(10.5, 8)
     glEnd()
+
 # KAKI
 def kakiKanan():
     glBegin(GL_POLYGON)
@@ -240,18 +256,20 @@ def alaskakikanan():
     glEnd()
 
 def iterate():
-    glViewport(100, 100, 1000, 1000) # untuk mengatur area pandang
+    glViewport(100, 100, 1000, 1000) 
     glMatrixMode(GL_PROJECTION)
     glLoadIdentity()
-    glOrtho(0.0, 60, 0.0, 60, 0.0, 1.0) # untuk mengatur berapa blok yang digunakan (skala) nilai x, y, z
+    glOrtho(0.0, 70, 0.0, 70, 0.0, 1.0) 
     glMatrixMode (GL_MODELVIEW)
     glLoadIdentity()
 
 def showScreen():
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT) # to clean the screen
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT) 
     glLoadIdentity()
     iterate()
     #BADAN DAN ANTENA
+    rightline()
+    leftline()
     pointsleft()
     pointrights()
     badan()
@@ -282,13 +300,13 @@ def showScreen():
     kakiKanan()
     alaskakikanan()
     alaskakikiri()
-    glutSwapBuffers() # untuk membersihkan layar, double buffering
+    glutSwapBuffers()
 
 glutInit()
-glutInitDisplayMode(GLUT_RGBA) # untuk mengatur display supaya berwarna
-glutInitWindowSize(500, 500) # untuk mengatur ukuran window
-glutInitWindowPosition(0, 0) # untuk mengatur letak window
-wind = glutCreateWindow("PLANKTON") # untuk memberi nama pada window
-glutDisplayFunc(showScreen) # untuk fungsi callback
-glutIdleFunc(showScreen) # untuk fungsi callback
-glutMainLoop() # fungsi yang akan memulai keseluruhan program
+glutInitDisplayMode(GLUT_RGBA)
+glutInitWindowSize(500, 500)
+glutInitWindowPosition(0, 0) 
+wind = glutCreateWindow("PLANKTON")
+glutDisplayFunc(showScreen) 
+glutIdleFunc(showScreen)
+glutMainLoop() 
