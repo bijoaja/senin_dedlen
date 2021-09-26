@@ -74,12 +74,52 @@ def RL_kelopak_mata():
     glVertex2f(14, 16) 
     glVertex2f(10, 16)
     glEnd()
-    
+
+#TANGAN kiri
+def L_tangan():
+    glColor3ub(56, 168, 50)
+    glBegin(GL_LINES)
+    glVertex2f(8, 12)
+    glVertex2f(5.5,14)
+    glEnd()
+def L_lengan():
+    glColor3ub(56, 168, 50)
+    glBegin(GL_LINES)
+    glVertex2f(5.5,14)
+    glVertex2f(5.7,17)
+    glEnd()
+def tlpk_L_tangan():
+    glPointSize(14)
+    glBegin(GL_POINTS)
+    glColor3ub(56, 168, 50)
+    glVertex2f(5.7,17)
+    glEnd()
+
+#TANGAN kanan
+def R_tangan():
+    glColor3ub(56, 168, 50)
+    glBegin(GL_LINES)
+    glVertex2f(16, 12)
+    glVertex2f(18.5,14)
+    glEnd()
+def R_lengan():
+    glColor3ub(56, 168, 50)
+    glBegin(GL_LINES)
+    glVertex2f(18.5,14)
+    glVertex2f(18.7,17)
+    glEnd()
+def tlpk_R_tangan():
+    glPointSize(14)
+    glBegin(GL_POINTS)
+    glColor3ub(56, 168, 50)
+    glVertex2f(18.7,17)
+    glEnd()
+
 def iterate():
     glViewport(100, 100, 1000, 1000) # untuk mengatur area pandang
     glMatrixMode(GL_PROJECTION)
     glLoadIdentity()
-    glOrtho(0.0, 100, 0.0, 100, 0.0, 1.0) # untuk mengatur berapa blok yang digunakan (skala) nilai x, y, z
+    glOrtho(0.0, 60, 0.0, 60, 0.0, 1.0) # untuk mengatur berapa blok yang digunakan (skala) nilai x, y, z
     glMatrixMode (GL_MODELVIEW)
     glLoadIdentity()
 
@@ -90,6 +130,16 @@ def showScreen():
     pointsleft()
     pointrights()
     badan()
+    TB_kelopak_mata()
+    RL_kelopak_mata()
+    retina()
+    bolamata()
+    L_tangan()
+    tlpk_L_tangan()
+    L_lengan()
+    R_tangan()
+    tlpk_R_tangan()
+    R_lengan()
     glutSwapBuffers() # untuk membersihkan layar, double buffering
 
 glutInit()
