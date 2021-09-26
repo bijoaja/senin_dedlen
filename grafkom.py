@@ -198,6 +198,46 @@ def lidah():
     glVertex2f(13.5, 8)
     glVertex2f(10.5, 8)
     glEnd()
+# KAKI
+def kakiKanan():
+    glBegin(GL_POLYGON)
+    glColor3ub(56, 168, 50)
+    glVertex2f(13, 6.5)
+    glVertex2f(13, 3)
+    glVertex2f(13, 3)
+    glVertex2f(13, 2.7)
+    glVertex2f(12.5, 2.7)
+    glVertex2f(12.5, 6.5)
+    glEnd()
+
+def kakiKiri():
+    glBegin(GL_POLYGON)
+    glColor3ub(56, 168, 50)
+    glVertex2f(11, 6.5)
+    glVertex2f(11, 3)
+    glVertex2f(11, 3)
+    glVertex2f(11, 2.7)
+    glVertex2f(11.5, 2.7)
+    glVertex2f(11.5, 6.5)
+    glEnd()
+
+def alaskakikiri():
+    glColor3ub(56, 168, 50)
+    glBegin(GL_QUADS)
+    glVertex2f(10.5, 2.7)
+    glVertex2f(11.8, 2.7)
+    glVertex2f(11.8, 2.2)
+    glVertex2f(10.5, 2.2)
+    glEnd()
+
+def alaskakikanan():
+    glColor3ub(56, 168, 50)
+    glBegin(GL_QUADS)
+    glVertex2f(12.2, 2.7)
+    glVertex2f(13.5, 2.7)
+    glVertex2f(13.5, 2.2)
+    glVertex2f(12.2, 2.2)
+    glEnd()
 
 def iterate():
     glViewport(100, 100, 1000, 1000) # untuk mengatur area pandang
@@ -237,6 +277,11 @@ def showScreen():
     bibir4()
     bibir5()
     bibir6()
+    # KAKI
+    kakiKiri()
+    kakiKanan()
+    alaskakikanan()
+    alaskakikiri()
     glutSwapBuffers() # untuk membersihkan layar, double buffering
 
 glutInit()
