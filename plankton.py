@@ -47,34 +47,32 @@ def bolamata():
     glPointSize(25)
     glBegin(GL_POINTS)
     glColor3ub(0,0,0)
-    glVertex2f(9,11)
+    glVertex2f(12,14.5)
     glEnd()
 
 def retina():
-    glBegin(GL_QUADS)
-    glColor3ub(34, 227, 169)
-    glVertex2f(8, 8) 
-    glVertex2f(12, 8) 
-    glVertex2f(12, 12)
-    glVertex2f(8, 12)
-    glEnd()
-
-def RL_kelopak_mata():
-    glBegin(GL_QUADS)
-    glColor3ub(112, 30, 2)
-    glVertex2f(7, 8) 
-    glVertex2f(13, 8) 
-    glVertex2f(13, 12) 
-    glVertex2f(7, 12)
+    glPointSize(50)
+    glBegin(GL_POINTS)
+    glColor3ub(56, 168, 50)
+    glVertex2f(12,14.5)
     glEnd()
 
 def TB_kelopak_mata():
     glBegin(GL_QUADS)
     glColor3ub(112, 30, 2)
-    glVertex2f(8, 7) 
-    glVertex2f(12, 7) 
-    glVertex2f(12, 14) 
-    glVertex2f(8, 14) 
+    glVertex2f(10.5, 12.5) 
+    glVertex2f(13.5, 12.5) 
+    glVertex2f(13.5, 17) 
+    glVertex2f(10.5, 17) 
+    glEnd()
+
+def RL_kelopak_mata():
+    glBegin(GL_QUADS)
+    glColor3ub(112, 30, 2)
+    glVertex2f(10, 13) 
+    glVertex2f(14, 13) 
+    glVertex2f(14, 16) 
+    glVertex2f(10, 16)
     glEnd()
     
 def iterate():
