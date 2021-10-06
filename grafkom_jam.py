@@ -29,6 +29,7 @@ def main():
         glVertex2f(2, 3)
         glVertex2f(2, 8.78)
         glVertex2f(4.5, 2)
+        
     glEnd()
     
 def tail():
@@ -52,6 +53,9 @@ def Circle_polygon(x_pos, y_pos, radius, sides,r,g,b): # membuat fungsi lingkara
         glVertex2f(cosine,sine)
     glEnd()
 
+def translate():
+    pass
+
 def titik():
     glPointSize(10)
     glBegin(GL_POINTS)
@@ -72,10 +76,10 @@ def titik():
     glEnd()
     
 def iterate():
-    glViewport(100, 100, 1200, 1200) # untuk mengatur area pandang
+    glViewport(-300, -300, 1200, 1200) # untuk mengatur area pandang
     glMatrixMode(GL_PROJECTION)
     glLoadIdentity()
-    glOrtho(0.0, 50, 0.0, 50, 0.0, 1.0) # untuk mengatur berapa blok yang digunakan (skala) nilai x, y, z
+    glOrtho(-50, 50, -50, 50, 0.0, 1.0) # untuk mengatur berapa blok yang digunakan (skala) nilai x, y, z
     glMatrixMode (GL_MODELVIEW)
     glLoadIdentity()
 
@@ -83,10 +87,15 @@ def showScreen():
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT) # to clean the screen
     glLoadIdentity()
     iterate()
+    #Untuk Merotasi Objek dengan angle 90 derajat
+    glRotated(180, 0, 0, 1)
+    #Untuk Memindahkan objek sebanyak 5 x, dan 5 y
+    glTranslated(5, 5, 0)
     main()
     Circle_polygon(4, 11, 3, 100, 242, 179, 70  )
     tail()
     titik()
+    translate()
     glutSwapBuffers() # untuk membersihkan layar, double buffering
 
 glutInit()
