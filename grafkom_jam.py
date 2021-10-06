@@ -52,6 +52,26 @@ def Circle_polygon(x_pos, y_pos, radius, sides,r,g,b): # membuat fungsi lingkara
         glVertex2f(cosine,sine)
     glEnd()
 
+def titik():
+    glPointSize(10)
+    glBegin(GL_POINTS)
+    glColor3ub(255, 17, 0) 
+    glVertex2f(4,14)
+    glVertex2f(5.57, 13.56)
+    glVertex2f(6.68, 12.35)
+    glVertex2f(7,11)
+    glVertex2f(6.65, 9.59)
+    glVertex2f(5.58, 8.45)
+    glVertex2f(4, 8)
+    glVertex2f(2.44, 8.44)
+    glVertex2f(1.35, 9.6)
+    glVertex2f(1, 11)
+    glVertex2f(1.34, 12.39)
+    glVertex2f(2.43, 13.56)
+    glVertex2f(4, 14)
+    glVertex2f(4, 11)
+    glEnd()    
+    
 def iterate():
     glViewport(100, 100, 1200, 1200) # untuk mengatur area pandang
     glMatrixMode(GL_PROJECTION)
