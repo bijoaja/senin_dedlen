@@ -57,7 +57,7 @@ def translate():
     pass
 
 def titik():
-    glPointSize(10)
+    glPointSize(5)
     glBegin(GL_POINTS)
     glColor3ub(255, 17, 0) 
     glVertex2f(3.99, 13.71)
