@@ -86,6 +86,7 @@ def showScreen():
     main()
     Circle_polygon(4, 11, 3, 100, 242, 179, 70  )
     tail()
+    titik()
     glutSwapBuffers() # untuk membersihkan layar, double buffering
 
 glutInit()
